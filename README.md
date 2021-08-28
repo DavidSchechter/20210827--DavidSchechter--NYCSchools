@@ -24,33 +24,33 @@ DanielleBordner-NYCSchools)
 In order to prevent you from running down rabbit holes that are less important to
 us, try to prioritize the following:
 What is Important
- Proper function – requirements met.
- Well-constructed, easy-to-follow, commented code (especially comment hacks
+* Proper function – requirements met.
+* Well-constructed, easy-to-follow, commented code (especially comment hacks
 or workarounds made in the interest of expediency (i.e. // given more time I
 would prefer to wrap this in a blah blah blah pattern blah blah )).
- Proper separation of concerns and best-practice coding patterns.
- Defensive code that graciously handles unexpected edge cases.
+* Proper separation of concerns and best-practice coding patterns.
+* Defensive code that graciously handles unexpected edge cases.
 What is Less Important
- Demonstrating technologies or techniques you are not already familiar with.
+* Demonstrating technologies or techniques you are not already familiar with.
 Bonus Points!
- Unit Tests
- Additional functionality – whatever you see fit.
+* Unit Tests
+* Additional functionality – whatever you see fit.
 
 iOS:
- “For applications that include CocoaPods with their project code, please
+* “For applications that include CocoaPods with their project code, please
 commit the third-party frameworks to your repository (Even though this goes
 against the CocoaPods general rules).” OR don’t use any third-party
 dependency if possible, that will allow app to build and run standalone.
- Be sure to use safe area insets.
- Make sure your app is compatible with iPhone X.
- Use Swift as the primary language. Combination of Swift and Objective would
+* Be sure to use safe area insets.
+* Make sure your app is compatible with iPhone X.
+* Use Swift as the primary language. Combination of Swift and Objective would
 be good to show case your skills in both languages
 
 Android:
- Make sure you are correctly handing any necessary permissions.
- Please make sure you are using Java. If you want to demonstrate the use of
+* Make sure you are correctly handing any necessary permissions.
+* Please make sure you are using Java. If you want to demonstrate the use of
 Kotlin, we'd rather you use a combination of both.
- Use Java as the primary language. You can also show case your skills in Kotlin
+* Use Java as the primary language. You can also show case your skills in Kotlin
 if you would like.
 As mentioned, you are not expected to function in a vacuum. Use all the online
 resources you can find, and please do contact us with questions or for interim
