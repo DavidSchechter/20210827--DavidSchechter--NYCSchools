@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>highSchoolsURL</key>
+	<string>https://data.cityofnewyork.us/resource/97mf-9njv.json</string>
+	<key>highSchoolsWithSATScoresURL</key>
+	<string>https://data.cityofnewyork.us/resource/734v-jeq5.json</string>
+</dict>
+</plist>
