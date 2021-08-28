@@ -11,8 +11,8 @@ class NYCSchoolContactInformationTableViewCel: UITableViewCell {
 
     //MARK: IBOutlet
     
-    @IBOutlet weak var website: UILabel!
-    @IBOutlet weak var phoneNumber: UILabel!
+    @IBOutlet weak var website: UITextView!
+    @IBOutlet weak var phoneNumber: UITextView!
     @IBOutlet weak var address: UILabel!
     
     //MARK: Lifecycle Methods
@@ -20,6 +20,10 @@ class NYCSchoolContactInformationTableViewCel: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
+        self.website.textContainer.maximumNumberOfLines = 1
+        self.website.textContainer.lineBreakMode = .byTruncatingTail
+        self.phoneNumber.textContainer.maximumNumberOfLines = 1
+        self.phoneNumber.textContainer.lineBreakMode = .byTruncatingTail
     }
     
     // MARK: Configure Methods

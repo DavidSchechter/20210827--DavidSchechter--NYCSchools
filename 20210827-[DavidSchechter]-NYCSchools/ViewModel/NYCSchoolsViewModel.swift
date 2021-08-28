@@ -11,7 +11,6 @@ import Combine
 protocol NYCSchoolsViewModelProtocol {
     init(dataManager: DataManagerProtocol)
     
-    var dataManager: DataManagerProtocol { get }
     var modelPublisher: CurrentValueSubject<[NYCHighSchool], Never> { get }
     var filteredPublisher: CurrentValueSubject<[NYCHighSchool]?, Never> { get }
     var titlePublisher: AnyPublisher<String, Never> { get }
@@ -22,12 +21,19 @@ protocol NYCSchoolsViewModelProtocol {
 
 class NYCSchoolsViewModel: NYCSchoolsViewModelProtocol {
     
+    //MARK: Public Paramters
+    
     var titlePublisher: AnyPublisher<String, Never> {
         Just("NYC High Schools").eraseToAnyPublisher()
     }
     var modelPublisher: CurrentValueSubject<[NYCHighSchool], Never> = CurrentValueSubject<[NYCHighSchool], Never>([NYCHighSchool]())
     var filteredPublisher: CurrentValueSubject<[NYCHighSchool]?, Never> = CurrentValueSubject<[NYCHighSchool]?, Never>(nil)
-    let dataManager: DataManagerProtocol
+    
+    //MARK: Private Paramters
+    
+    private let dataManager: DataManagerProtocol
+    
+    //MARK: NYCSchoolsViewModelProtocol Methods
         
     required init(dataManager: DataManagerProtocol) {
         self.dataManager = dataManager

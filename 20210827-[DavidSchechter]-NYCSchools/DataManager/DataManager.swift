@@ -13,7 +13,7 @@ protocol DataManagerProtocol {
 }
 
 class DataManager: DataManagerProtocol {
-    //MARK: - Private Paramters
+    //MARK: Private Paramters
     
     private let decoder: JSONDecoder = {
         let tmpDecoder = JSONDecoder()
@@ -23,7 +23,7 @@ class DataManager: DataManagerProtocol {
     
     public init() {}
     
-    //MARK: - Public Methods
+    //MARK: Public Methods
     
     /**
      Fetches all NYC Highschools.

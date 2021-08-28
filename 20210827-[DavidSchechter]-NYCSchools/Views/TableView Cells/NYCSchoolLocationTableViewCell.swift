@@ -13,6 +13,8 @@ class NYCSchoolLocationTableViewCell: UITableViewCell {
     //MARK: IBOutlet
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var mapPreviewError: UILabel!
     @IBOutlet weak var mapImageView: UIImageView!
     
     //MARK: Private Paramters
@@ -24,6 +26,13 @@ class NYCSchoolLocationTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
+        self.mapPreviewError.isHidden = true
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.mapPreviewError.isHidden = true
+        self.mapImageView.isHidden = false
     }
     
     // MARK: Configure Methods
@@ -45,6 +54,10 @@ class NYCSchoolLocationTableViewCell: UITableViewCell {
             loadingIndicator.startAnimating()
             snapShotter.start(with: bgQueue, completionHandler: { [weak self] (snapshot, error) in
                 guard error == nil else {
+                    self?.mapPreviewError.isHidden = false
+                    self?.mapImageView?.isHidden = true
+                    self?.loadingIndicator.isHidden = true
+                    self?.loadingIndicator.stopAnimating()
                     return
                 }
                 
@@ -59,6 +72,7 @@ class NYCSchoolLocationTableViewCell: UITableViewCell {
                     DispatchQueue.main.async {
                         self?.mapImageView.image = mapImage
                         self?.mapImageView?.isHidden = false
+                        self?.mapPreviewError.isHidden = true
                         self?.loadingIndicator.isHidden = true
                         self?.loadingIndicator.stopAnimating()
                     }

@@ -6,10 +6,16 @@
 //
 
 import UIKit
+import MapKit
 
 class NYCSchoolDetailsViewController: UIViewController {
 
+    //MARK: Public Paramters
+    
     var currectData: NYCHighSchool = NYCHighSchool()
+    
+    //MARK: IBOutlet
+    
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: Lifecycle Methods
@@ -46,6 +52,22 @@ extension NYCSchoolDetailsViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "NYCSchoolLocationTableViewCell") as! NYCSchoolLocationTableViewCell
             cell.configureWithModel(currectData)
             return cell
+        }
+    }
+}
+
+extension NYCSchoolDetailsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 3:
+            if let highSchoolCoordinate = currectData.locationWithCoordinate() {
+                let coordinate = CLLocationCoordinate2DMake(highSchoolCoordinate.latitude, highSchoolCoordinate.longitude)
+                let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+                mapItem.name = "\(currectData.schoolName ?? "")"
+                mapItem.openInMaps(launchOptions: nil)
+            }
+        default:
+            break
         }
     }
 }

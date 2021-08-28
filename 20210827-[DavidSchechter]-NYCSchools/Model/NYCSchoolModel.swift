@@ -9,6 +9,9 @@ import Foundation
 import MapKit
 
 public struct NYCHighSchool: Codable {
+    
+    //MARK: Private Paramters
+    
     public var dbn: String?
     public var schoolName: String?
     public var overviewParagraph: String?
@@ -19,9 +22,7 @@ public struct NYCHighSchool: Codable {
     public var satMathAvgScore: String?
     public var satWritinAvgScore: String?
     
-    
-    
-    //MARK: - Public helper Methods
+    //MARK: Public helper Methods
     
     /**
      Merge two NYCHighSchool object.
